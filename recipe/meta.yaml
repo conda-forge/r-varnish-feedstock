@@ -1,4 +1,4 @@
-{% set version = "1.0.6" %}
+{% set version = "1.0.7" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/carpentries/varnish/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 499ceb11ac2d030858fdc6b1c4c4e73a3dea09d41f71346d63669d76304e7afe
+  sha256: 6d9a38d1219db45160e5e13ea42dcb9cd5c2b7fb5c5f1bcf48feb53e930c8022
 
 build:
   number: 0
