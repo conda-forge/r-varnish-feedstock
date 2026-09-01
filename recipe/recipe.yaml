@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  version: "1.1.2"
+
+package:
+  name: r-varnish
+  version: ${{ version }}
+
+source:
+  url: https://github.com/carpentries/varnish/archive/refs/tags/${{ version }}.tar.gz
+  sha256: 2b3d7590089d06b09687d22b439b65366a1b25768467229061dfe1f53680197d
+
+build:
+  number: 0
+  noarch: generic
+  script: ${{ R }} CMD INSTALL --build .
+
+requirements:
+  host:
+    - r-base
+  run:
+    - r-base
+
+tests:
+  - r:
+      libraries:
+        - varnish
+
+about:
+  license: MIT
+  summary: The Carpentries Lesson HTML Templates
+  description: |
+    This project does not contain any useful R code.
+    It contains HTML templates with mustache syntax, CSS, and JavaScript.
+  license_file:
+    - ${{ PREFIX }}/lib/R/share/licenses/MIT
+    - LICENSE
+  homepage: https://github.com/carpentries/varnish
+  repository: https://github.com/carpentries/varnish
+  documentation: https://carpentries.github.io/varnish/
+
+extra:
+  recipe-maintainers:
+    - conda-forge/r
+    - matthewfeickert
